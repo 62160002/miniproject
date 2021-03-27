@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+
+  <style>
+    .center {
+  margin: auto;
+  width: 50%;
+  border: 3px;
+  padding: 10px;
+  text-align: center;
+  
+}
+
+
+div {
+    display: block;
+}
+
+body {
+    background: #222D32;
+    font-family: 'Roboto', sans-serif;
+}
+label{
+  color: #dedede;
+}
+body {
+    background: #222D32;
+    font-family: 'Roboto', sans-serif;
+}
+
+.login-box {
+    margin-top: 50px;
+    margin-left: 25%;
+    height: auto;
+    background: #1A2226;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+
+input[type=text] {
+    background-color: #1A2226;
+    border: none;
+    border-bottom: 2px solid #0DB8DE;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 20px;
+    padding-left: 0px;
+    color: #ECF0F5;
+}
+
+input[type=password] {
+    background-color: #1A2226;
+    border: none;
+    border-bottom: 2px solid #0DB8DE;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    padding-left: 0px;
+    margin-bottom: 20px;
+    color: #ECF0F5;
+}
+
+.form-group {
+    margin-bottom: 40px;
+    outline: 0px;
+}
+
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 2px solid #0DB8DE;
+    outline: 0;
+    background-color: #1A2226;
+    color: #ECF0F5;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0;
+}
+
+label {
+    margin-bottom: 0px;
+}
+
+.form-control-label {
+    font-size: 10px;
+    color: #6C6C6C;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    width: 100%;
+    height: 100%;
+}
+
+.login-btm {
+    float: left;
+}
+
+.login-button {
+    padding-right: 0px;
+    text-align: right;
+    margin-bottom: 25px;
+    
+}
+
+.login-text {
+    text-align: left;
+    padding-left: 0px;
+    color: #A2A4A4;
+}
+
+.loginbttm {
+    padding: 0px;
+}
+:root {
+	 --base-color: rgba(255, 255, 255, 1);
+	 --hover-color: rgba(220, 120, 150, 1);
+}
+
+ .horizontal {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 position: relative;
+   width: 400px;
+   right: 35px;
+	 height: 120px;
+   margin: 20px;
+	 border: 10px solid var(--base-color);
+	 font-size: 4rem;
+   cursor: pointer;
+   
+}
+ .horizontal > .text {
+	 position: relative;
+	 color: transparent;
+	 background-image: linear-gradient(90deg, var(--hover-color) 0%, var(--hover-color) 50%, var(--base-color) 50%, var(--base-color) 100%);
+	 background-repeat: repeat;
+	 background-size: 200%;
+	 background-position: 100% 0;
+	 -webkit-background-clip: text;
+	 background-clip: text;
+	 transition: background-position 300ms;
+}
+ .horizontal::before {
+	 content: '';
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 100%;
+	 height: 100%;
+	 background: var(--base-color);
+	 transform-origin: 100% 0;
+	 transform: scale3d(0, 1, 1);
+	 transition: transform 300ms;
+}
+ .horizontal:hover .text {
+	 background-position: 0 0;
+}
+ .horizontal:hover::before {
+	 transform-origin: 0 0;
+	 transform: scale3d(1, 1, 1);
+}
+
+    </style>
+</head>
+
+<body>
+
+  <div class="col-lg-6 col-md-8 login-box">
+    <h1 class="text-center mb-5 text-uppercase text-muted">Real Time Chat</h1>
+    <div class="text-uppercase center">
+      <form action="" method="POST">
+        <div class="form-group">
+          <label for="_email">User Name</label>
+          <input type="text" name="user_name" id="_rname" class="form-control" placeholder="Name" maxlength="8"
+            rnodeequired>
+        </div>
+        <div class="form-group">
+          <label for="_email">Email</label>
+          <input type="text" name="user_email" id="_email" class="form-control" placeholder="Email" rnodeequired>
+        </div>
+        <% if (locals.login_errors) { 
+                  login_errors.forEach(function(error_msg){ %>
+        <div class="alert alert-danger" role="alert">
+          <%= error_msg %>
+        </div>
+        <% });
+                } %>
+        <a class = "horizontal">
+        <button type="submit" class="text">Enter Chat</button>
+      </a>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
